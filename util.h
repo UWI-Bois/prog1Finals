@@ -17,6 +17,7 @@ using namespace std;
 #define MAX_OPEN_PRICES 1258
 #define MAX_DISPARITIES 629 // MAX_OPEN_PRICES/2
 #define MAX_SEARCH_RESULTS 50
+#define MAX_ENTRIES 50
 #define FNAME "inf.txt"
 #define ONAME "outf.txt"
 #define HIGHEST 999999
@@ -32,4 +33,6 @@ int getLowestIndexFromArray(double arr[], int size);
 double getAverageOpenIndexFromArray(double arr[]);
 int populateDisparities(double opens[], double arr[]);
 void printIntArray(int arr[], int size);
+int getIndexesByValue(double needle, double haystack[], int sizeHaystack,int needles[]);
+int addEntry(double val, double arr[]);
 #endif //COMP1601_FINALS_UTIL_H

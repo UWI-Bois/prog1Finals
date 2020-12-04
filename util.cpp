@@ -192,16 +192,28 @@ int populateDisparities(double opens[], double arr[]){
     return idx;
 }
 
-int getIndexesByValue(double val, double arr[], int size, int vals[]){
+int getIndexesByValue(double needle, double haystack[], int sizeHaystack,int needles[]){
+    /*
+     * if 0 is returned, then no results were found :)
+     */
     int j = 0;
-    for (int i = 0; i  < size; ++i) {
-        if (arr[i] == val){
-            vals[j++] = i;
+    for (int i = 0; i  < sizeHaystack; ++i) {
+        if (haystack[i] == needle && j < MAX_SEARCH_RESULTS){
+            needles[j++] = i;
         }
     }
     return j;
 }
 
-int addEntry(double val, double arr[], int size){
-
+int addEntry(double val, double arr[]){
+    int count = 0;
+    for (int i = 0; i < MAX_ENTRIES; ++i) {
+        if(arr[i] <= 0){
+            cout << "addEntry[" << i << "] says: " << arr[i] << endl;
+            arr[i] = val;
+            count++;
+            break;
+        }
+    }
+    return count;
 }
