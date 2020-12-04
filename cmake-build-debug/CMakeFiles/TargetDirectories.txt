@@ -1,0 +1,3 @@
+/home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles/comp1601_finals.dir
