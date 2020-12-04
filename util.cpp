@@ -38,27 +38,30 @@ int menu () {
     validChoice = false;
 
     while (!validChoice) {
-        cout << "  COMP 1601 - Two-Day Assessment: Program 2" << endl;
+        cout << "  COMP 1601 - Two-Day Assessment: Apple Stocks" << endl;
         cout << "  ================================================" << endl;
         cout << endl;
         cout << "                   M E N U" << endl;
         cout << endl;
-        cout << "  1.  Highest/Lowest height of weather balloon." << endl;
-        cout << "  2.  Check if height was increasing." << endl;
-        cout << "  3.  On which hours was the height less than N?" << endl;
-        cout << "  4.  Did the weather balloon reach this height?" << endl;
-        cout << "  5.  Insert a new height of the weather balloon." << endl;
-        cout << "  6.  Generate a graph showing height of weather balloon." << endl;
-        cout << "  7.  Save data to a file." << endl;
-        cout << "  8.  Quit" << endl;
+        cout << "  1.  Highest Open Price." << endl;
+        cout << "  2.  Lowest Open Price." << endl;
+        cout << "  3.  Average Open Price" << endl;
+        cout << "  4.  Highest Disparity" << endl;
+        cout << "  5.  Lowest Disparity." << endl;
+        cout << "  6.  Graph showing open prices over a given range." << endl;
+        cout << "  7.  Search for an entry(s)." << endl;
+        cout << "  8.  Update entry by open price." << endl;
+        cout << "  9.  Save data to a file." << endl;
+        cout << "  10.  Quit" << endl;
         cout << endl;
-        cout << "  Please choose an option or " << QUIT << " to quit: ";
+        cout << "  Please choose an option or " << OPTION_QUIT << " to quit: ";
         cin  >> choice;
 
-        if (choice >= 1 && choice <= QUIT)	// QUIT is a constant; its use is optional.
+        if (choice >= 1 && choice <= OPTION_QUIT)	// OPTION_QUIT is a constant; its use is optional.
             validChoice = true;
         else
-            system("cls");					// useful way to clear the screen. Works on Windows only.
+            system("cls");
+            system("clear");
     }
 
     return choice;
@@ -89,7 +92,12 @@ int populateArrayFromFile(double arr[]) {
 }
 
 void printDoubleArray(double arr[], int size) {
-    // cout << "Open Prices for AAPL:\n";
+    for (int i = 0; i  < size; ++i) {
+        cout << arr[i] << endl;
+    }
+}
+
+void printIntArray(int arr[], int size) {
     for (int i = 0; i  < size; ++i) {
         cout << arr[i] << endl;
     }
@@ -182,4 +190,18 @@ int populateDisparities(double opens[], double arr[]){
         }
     }
     return idx;
+}
+
+int getIndexesByValue(double val, double arr[], int size, int vals[]){
+    int j = 0;
+    for (int i = 0; i  < size; ++i) {
+        if (arr[i] == val){
+            vals[j++] = i;
+        }
+    }
+    return j;
+}
+
+int addEntry(double val, double arr[], int size){
+
 }

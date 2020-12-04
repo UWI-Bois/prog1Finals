@@ -11,9 +11,7 @@ using namespace std;
 
 int main () {
     double open_prices[MAX_OPEN_PRICES]; // from input file
-    double custom_data[MAX_OPEN_PRICES]; // for user entries
-    double edited_open_prices[MAX_OPEN_PRICES]; // for user updates
-
+    double added_data[MAX_DISPARITIES]; // for user entries
     double disparities[MAX_DISPARITIES];
 
     int isOpenPrices = populateArrayFromFile(open_prices);

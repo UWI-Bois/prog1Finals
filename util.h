@@ -13,9 +13,10 @@
 
 using namespace std;
 
-#define QUIT 8 // useful constant
+#define OPTION_QUIT 10 // useful constant
 #define MAX_OPEN_PRICES 1258
 #define MAX_DISPARITIES 629 // MAX_OPEN_PRICES/2
+#define MAX_SEARCH_RESULTS 50
 #define FNAME "inf.txt"
 #define ONAME "outf.txt"
 #define HIGHEST 999999
@@ -30,5 +31,5 @@ int getHighestIndexFromArray(double arr[], int size);
 int getLowestIndexFromArray(double arr[], int size);
 double getAverageOpenIndexFromArray(double arr[]);
 int populateDisparities(double opens[], double arr[]);
-
+void printIntArray(int arr[], int size);
 #endif //COMP1601_FINALS_UTIL_H
