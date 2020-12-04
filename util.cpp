@@ -57,7 +57,7 @@ int menu () {
         cout << "  Please choose an option or " << OPTION_QUIT << " to quit: ";
         cin  >> choice;
 
-        if (choice >= 1 && choice <= OPTION_QUIT)	// OPTION_QUIT is a constant; its use is optional.
+        if (choice >= 1 && choice <= OPTION_QUIT)
             validChoice = true;
         else
             system("cls");

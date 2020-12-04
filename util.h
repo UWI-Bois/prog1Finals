@@ -13,7 +13,18 @@
 
 using namespace std;
 
+// options
+#define OPTION_HIGHEST_OPEN 1
+#define OPTION_LOWEST_OPEN 2
+#define OPTION_AVG_OPEN 3
+#define OPTION_HIGHEST_DISPARITY 4
+#define OPTION_LOWEST_DISPARITY 5
+#define OPTION_GRAPH 6
+#define OPTION_SEARCH 7
+#define OPTION_UPDATE 8
+#define OPTION_SAVE 9
 #define OPTION_QUIT 10 // useful constant
+// globals
 #define MAX_OPEN_PRICES 1258
 #define MAX_DISPARITIES 629 // MAX_OPEN_PRICES/2
 #define MAX_SEARCH_RESULTS 50
