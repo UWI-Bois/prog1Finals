@@ -40,6 +40,7 @@ void printIntArray(int arr[], int size);
 int getIndexesByValue(double needle, double *haystack, int sizeHaystack, int *needles);
 int addEntry(double val, double arr[]);
 void resetSearches(int *searches);
+void resetEntries(double *entries);
 
 
 #endif //COMP1601_FINALS_UTIL_H

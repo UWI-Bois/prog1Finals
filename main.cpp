@@ -1,6 +1,9 @@
 // main.cpp
 #include "util.h"
 #include "menu.h"
+
+void option10(double *opens, double *entries, double *disparities, int numEntries);
+
 using namespace std;
 
 int main () {
@@ -9,8 +12,11 @@ int main () {
     int search_results[MAX_SEARCH_RESULTS]; // for search
     double disparities[MAX_DISPARITIES]; // all disparities
 
+    resetSearches(search_results); // initialize array
+    resetEntries(entries); // initialize array
+
     double entry = 0;
-    int made_entries = 0;
+    int numEntries = 0;
     int choice = -1;
 
     int isOpenPrices = populateArrayFromFile(open_prices);
@@ -35,6 +41,10 @@ int main () {
                 option7(open_prices, MAX_OPEN_PRICES, search_results);
             } else if(choice == OPTION_UPDATE){
                 option8(MAX_OPEN_PRICES, search_results, disparities, open_prices);
+            } else if (choice == OPTION_ADD_ENTRY){
+                numEntries = option9(entries);
+            } else if (choice == OPTION_SAVE){
+                option10(open_prices, entries, disparities, numEntries);
             }
         }
 

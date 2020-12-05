@@ -162,12 +162,13 @@ int getIndexesByValue(double needle, double *haystack, int sizeHaystack, int *ne
 int addEntry(double val, double arr[]){
     int count = 0;
     for (int i = 0; i < MAX_ENTRIES; ++i) {
-        if(arr[i] <= 0){
-            cout << "addEntry[" << i << "] says: " << arr[i] << endl;
+        if(arr[i] == -1){ // ENSURE TO INITIALIZE THE ARRAY WITH resetEntries()
+            // cout << "addEntry[" << i << "] says: " << arr[i] << endl;
             arr[i] = val;
             count++;
-            break;
+            break; // break out of for loop
         }
+        count++;
     }
     return count;
 }
@@ -178,6 +179,11 @@ void pressEnterToContinue(){
 
 void resetSearches(int *searches){
     for (int i = 0; i < MAX_SEARCH_RESULTS; ++i) {
-        searches[i] = 0;
+        searches[i] = -1;
+    }
+}
+void resetEntries(double *entries){
+    for (int i = 0; i < MAX_ENTRIES; ++i) {
+        entries[i] = -1;
     }
 }

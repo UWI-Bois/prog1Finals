@@ -30,13 +30,14 @@ int menu () {
         cout << "  6.  Graph showing open prices over a given range." << endl;
         cout << "  7.  Search for an entry(s)." << endl;
         cout << "  8.  Update entry by open price." << endl;
-        cout << "  9.  Save data to a file." << endl;
-        cout << "  10.  Quit" << endl;
+        cout << "  9.  Add data to dataset." << endl;
+        cout << "  10.  Save data to a file." << endl;
+        cout << "  11.  Quit" << endl;
         cout << endl;
         cout << "  Please choose an option or " << OPTION_QUIT << " to quit: ";
         cin  >> choice;
 
-        if (choice >= 1 && choice <= OPTION_QUIT) {
+        if (choice >= 1 && choice <= OPTION_ADD_ENTRY) {
             validChoice = true;
         } else{
             //system("cls");
@@ -162,4 +163,26 @@ int option8(int sizeHaystack, int needles[], double disparities[], double haysta
     }
     cout << SEP;
     pressEnterToContinue();
+}
+
+void option10(double *opens, double *entries, double *disparities, int numEntries) {
+
+}
+
+int option9(double *entries) {
+    cout << "You have chosen option 9!" << endl;
+    cout << "Make up to 50 valid open price entries!" << endl;
+    double entry = 0;
+    int numEntries = 0;
+    while(entry != -1){
+        cout << "enter a value to input (eg 120) OR -1 to exit: ";
+        cin >> entry;
+        if(entry == -1){
+            break;
+        }
+        numEntries = addEntry(entry, entries);
+    }
+    cout << "Here are the entries you made thus far: " << endl;
+    printDoubleArray(entries, numEntries);
+    return numEntries;
 }
