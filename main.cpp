@@ -2,7 +2,7 @@
 #include "util.h"
 #include "menu.h"
 
-void option10(double *opens, double *entries, double *disparities, int numEntries);
+int option10(double *opens, double *entries, double *disparities, int numEntries);
 
 using namespace std;
 
@@ -15,7 +15,6 @@ int main () {
     resetSearches(search_results); // initialize array
     resetEntries(entries); // initialize array
 
-    double entry = 0;
     int numEntries = 0;
     int choice = -1;
 

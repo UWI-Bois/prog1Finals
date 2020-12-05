@@ -37,7 +37,7 @@ int menu () {
         cout << "  Please choose an option or " << OPTION_QUIT << " to quit: ";
         cin  >> choice;
 
-        if (choice >= 1 && choice <= OPTION_ADD_ENTRY) {
+        if (choice >= 1 && choice <= OPTION_QUIT) {
             validChoice = true;
         } else{
             //system("cls");
@@ -165,8 +165,33 @@ int option8(int sizeHaystack, int needles[], double disparities[], double haysta
     pressEnterToContinue();
 }
 
-void option10(double *opens, double *entries, double *disparities, int numEntries) {
-
+int option10(double *opens, double *entries, double *disparities, int numEntries) {
+    cout << "You have chosen option 10 -> save data to file!" << endl;
+    ofstream outf;
+    outf.open(ONAME);
+    cout << outf.is_open() << endl;
+    if(!outf){
+        cout << "error opening file: " << ONAME << endl;
+        return -1;
+    } else{
+        cout << "success opening file: " << ONAME << endl;
+    }
+    // print opens to file
+    outf << "=-=-=- Open Prices for AAPL (2012-2017) -=-=-=\n";
+    for (int i = 0; i  < MAX_OPEN_PRICES; ++i) {
+        outf << opens[i] << endl;
+    }
+    // print custom entries to file
+    outf << "=-=-=- User entries -=-=-=\n";
+    for (int i = 0; i  < numEntries; ++i) {
+        outf << entries[i] << endl;
+    }
+    // print disparities to file
+    outf << "=-=-=- DISPARITIES -=-=-=\n";
+    for (int i = 0; i  < MAX_DISPARITIES; ++i) {
+        outf << disparities[i] << endl;
+    }
+    outf.close();
 }
 
 int option9(double *entries) {

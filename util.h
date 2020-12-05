@@ -31,7 +31,6 @@ void printStars2 (int n);
 int menu ();
 int populateArrayFromFile(double arr[]);
 void printDoubleArray(double arr[], int size);
-int makeOutFileFromArray(double arr[]);
 int getHighestIndexFromArray(double arr[], int size);
 int getLowestIndexFromArray(double arr[], int size);
 double getAverageOpenIndexFromArray(double arr[]);

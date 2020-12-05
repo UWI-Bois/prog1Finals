@@ -57,25 +57,6 @@ void printIntArray(int arr[], int size) {
     }
 }
 
-int makeOutFileFromArray(double arr[]){
-    // return max index (size - 1) of array if successful,
-    // return -1 if fail reading file
-    ofstream outf;
-    outf.open(ONAME);
-    cout << outf.is_open() << endl;
-    if(!outf){
-        cout << "error opening file: " << FNAME << endl;
-        return -1;
-    } else{
-        cout << "success opening file: " << FNAME << endl;
-    }
-    cout << "Edited Open Prices for AAPL:\n";
-    for (int i = 0; i  < MAX_OPEN_PRICES; ++i) {
-        outf << arr[i] << endl;
-    }
-    outf.close();
-}
-
 int getHighestIndexFromArray(double arr[], int size) {
     // option 1
     // returns index of the highest value
