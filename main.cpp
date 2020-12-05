@@ -1,11 +1,6 @@
 // main.cpp
-#include <iostream>
-#include <fstream>
-#include <cmath>
-#include <iomanip>
-#include <cstring>
-#include <itcl.h>
 #include "util.h"
+#include "menu.h"
 using namespace std;
 
 int main () {
@@ -16,28 +11,30 @@ int main () {
 
     double entry = 0;
     int made_entries = 0;
+    int choice = -1;
 
     int isOpenPrices = populateArrayFromFile(open_prices);
 
     if(isOpenPrices > 0){
-        // printDoubleArray(open_prices);
         populateDisparities(open_prices, disparities);
-//        printDoubleArray(disparities, MAX_DISPARITIES);
-
-        getHighestIndexFromArray(open_prices, MAX_OPEN_PRICES);
-        getLowestIndexFromArray(open_prices, MAX_OPEN_PRICES);
-        getAverageOpenIndexFromArray(open_prices);
-        getHighestIndexFromArray(disparities, MAX_DISPARITIES);
-        getLowestIndexFromArray(disparities, MAX_DISPARITIES);
-
-
-        while(entry != -1){
-            cout << "enter val: ";
-            cin >> entry;
-            made_entries += addEntry(entry, entries);
+        while (choice != OPTION_QUIT){
+            choice = menu();
+            if (choice == OPTION_HIGHEST_OPEN){
+                option1(open_prices, MAX_OPEN_PRICES);
+            } else if(choice == OPTION_LOWEST_OPEN){
+                option2(open_prices, MAX_OPEN_PRICES);
+            } else if(choice == OPTION_AVG_OPEN){
+                option3(open_prices);
+            } else if(choice == OPTION_HIGHEST_DISPARITY){
+                option4(disparities, MAX_DISPARITIES);
+            } else if(choice == OPTION_LOWEST_DISPARITY){
+                option5(disparities, MAX_DISPARITIES);
+            } else if(choice == OPTION_GRAPH){
+                option6(disparities, MAX_DISPARITIES);
+            } else if(choice == OPTION_SEARCH){
+                option7(open_prices, MAX_OPEN_PRICES, search_results);
+            }
         }
-        cout << "made_entries = " << made_entries << endl;
-        printDoubleArray(entries, made_entries);
 
     }
 

@@ -10,20 +10,11 @@
 #include <cmath>
 #include <iomanip>
 #include <cstring>
+#include <stdio.h>
+#include <cstdlib>
 
 using namespace std;
 
-// options
-#define OPTION_HIGHEST_OPEN 1
-#define OPTION_LOWEST_OPEN 2
-#define OPTION_AVG_OPEN 3
-#define OPTION_HIGHEST_DISPARITY 4
-#define OPTION_LOWEST_DISPARITY 5
-#define OPTION_GRAPH 6
-#define OPTION_SEARCH 7
-#define OPTION_UPDATE 8
-#define OPTION_SAVE 9
-#define OPTION_QUIT 10 // useful constant
 // globals
 #define MAX_OPEN_PRICES 1258
 #define MAX_DISPARITIES 629 // MAX_OPEN_PRICES/2
@@ -33,6 +24,8 @@ using namespace std;
 #define ONAME "outf.txt"
 #define HIGHEST 999999
 
+// function protos
+void pressEnterToContinue();
 void printStars (int numStars);
 void printStars2 (int n);
 int menu ();
@@ -44,6 +37,10 @@ int getLowestIndexFromArray(double arr[], int size);
 double getAverageOpenIndexFromArray(double arr[]);
 int populateDisparities(double opens[], double arr[]);
 void printIntArray(int arr[], int size);
-int getIndexesByValue(double needle, double haystack[], int sizeHaystack,int needles[]);
+int getIndexesByValue(double needle, double haystack[], int sizeHaystack, double *needles);
 int addEntry(double val, double arr[]);
+int getIndexesByValue(double needle, double haystack[], int sizeHaystack, double needles[]);
+
+
+
 #endif //COMP1601_FINALS_UTIL_H

@@ -1,14 +1,7 @@
 //
 // Created by ajays on 12/3/20.
 //
-#include <iostream>
-#include <fstream>
-#include <cmath>
-#include <iomanip>
-#include <cstring>
 #include "util.h"
-
-using namespace std;
 
 void printStars (int numStars) {
     int i;
@@ -26,45 +19,6 @@ void printStars2 (int n) {
         cout << " ";
 
     cout << "*";
-}
-
-int menu () {
-    /*  The following function generates the menu. Edit the menu options so that
-        it displays the correct options for your program.
-    */
-    int choice;
-    bool validChoice;
-
-    validChoice = false;
-
-    while (!validChoice) {
-        cout << "  COMP 1601 - Two-Day Assessment: Apple Stocks" << endl;
-        cout << "  ================================================" << endl;
-        cout << endl;
-        cout << "                   M E N U" << endl;
-        cout << endl;
-        cout << "  1.  Highest Open Price." << endl;
-        cout << "  2.  Lowest Open Price." << endl;
-        cout << "  3.  Average Open Price" << endl;
-        cout << "  4.  Highest Disparity" << endl;
-        cout << "  5.  Lowest Disparity." << endl;
-        cout << "  6.  Graph showing open prices over a given range." << endl;
-        cout << "  7.  Search for an entry(s)." << endl;
-        cout << "  8.  Update entry by open price." << endl;
-        cout << "  9.  Save data to a file." << endl;
-        cout << "  10.  Quit" << endl;
-        cout << endl;
-        cout << "  Please choose an option or " << OPTION_QUIT << " to quit: ";
-        cin  >> choice;
-
-        if (choice >= 1 && choice <= OPTION_QUIT)
-            validChoice = true;
-        else
-            system("cls");
-            system("clear");
-    }
-
-    return choice;
 }
 
 int populateArrayFromFile(double arr[]) {
@@ -192,7 +146,7 @@ int populateDisparities(double opens[], double arr[]){
     return idx;
 }
 
-int getIndexesByValue(double needle, double haystack[], int sizeHaystack,int needles[]){
+int getIndexesByValue(double needle, double haystack[], int sizeHaystack, double *needles){
     /*
      * if 0 is returned, then no results were found :)
      */
@@ -216,4 +170,8 @@ int addEntry(double val, double arr[]){
         }
     }
     return count;
+}
+
+void pressEnterToContinue(){
+    cout << "Press ENTER to continue... " << flush;
 }

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/comp1601_finals.dir/main.cpp.o"
+  "CMakeFiles/comp1601_finals.dir/menu.cpp.o"
   "CMakeFiles/comp1601_finals.dir/util.cpp.o"
   "comp1601_finals"
   "comp1601_finals.pdb"

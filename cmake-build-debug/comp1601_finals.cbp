@@ -85,6 +85,12 @@
 		<Unit filename="/home/ajays/CLionProjects/prog1Finals/main.cpp">
 			<Option target="comp1601_finals"/>
 		</Unit>
+		<Unit filename="/home/ajays/CLionProjects/prog1Finals/menu.cpp">
+			<Option target="comp1601_finals"/>
+		</Unit>
+		<Unit filename="/home/ajays/CLionProjects/prog1Finals/menu.h">
+			<Option target="comp1601_finals"/>
+		</Unit>
 		<Unit filename="/home/ajays/CLionProjects/prog1Finals/util.cpp">
 			<Option target="comp1601_finals"/>
 		</Unit>

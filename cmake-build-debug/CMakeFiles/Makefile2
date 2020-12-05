@@ -94,12 +94,12 @@ clean: CMakeFiles/comp1601_finals.dir/clean
 CMakeFiles/comp1601_finals.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/comp1601_finals.dir/build.make CMakeFiles/comp1601_finals.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/comp1601_finals.dir/build.make CMakeFiles/comp1601_finals.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target comp1601_finals"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target comp1601_finals"
 .PHONY : CMakeFiles/comp1601_finals.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/comp1601_finals.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/comp1601_finals.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ajays/CLionProjects/prog1Finals/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/comp1601_finals.dir/rule
