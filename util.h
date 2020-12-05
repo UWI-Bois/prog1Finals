@@ -37,10 +37,9 @@ int getLowestIndexFromArray(double arr[], int size);
 double getAverageOpenIndexFromArray(double arr[]);
 int populateDisparities(double opens[], double arr[]);
 void printIntArray(int arr[], int size);
-int getIndexesByValue(double needle, double haystack[], int sizeHaystack, double *needles);
+int getIndexesByValue(double needle, double *haystack, int sizeHaystack, int *needles);
 int addEntry(double val, double arr[]);
-int getIndexesByValue(double needle, double haystack[], int sizeHaystack, double needles[]);
-
+void resetSearches(int *searches);
 
 
 #endif //COMP1601_FINALS_UTIL_H

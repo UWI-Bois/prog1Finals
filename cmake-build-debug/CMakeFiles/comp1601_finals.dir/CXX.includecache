@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/ajays/CLionProjects/prog1Finals/main.cpp
-util.h
-/home/ajays/CLionProjects/prog1Finals/util.h
-menu.h
-/home/ajays/CLionProjects/prog1Finals/menu.h
-
 /home/ajays/CLionProjects/prog1Finals/menu.cpp
 menu.h
 /home/ajays/CLionProjects/prog1Finals/menu.h
@@ -19,10 +13,6 @@ util.h
 /home/ajays/CLionProjects/prog1Finals/util.h
 
 /home/ajays/CLionProjects/prog1Finals/menu.h
-util.h
-/home/ajays/CLionProjects/prog1Finals/util.h
-
-/home/ajays/CLionProjects/prog1Finals/util.cpp
 util.h
 /home/ajays/CLionProjects/prog1Finals/util.h
 

@@ -6,7 +6,7 @@ using namespace std;
 int main () {
     double open_prices[MAX_OPEN_PRICES]; // from input file
     double entries[MAX_ENTRIES]; // for user entries
-    double search_results[MAX_SEARCH_RESULTS]; // for search
+    int search_results[MAX_SEARCH_RESULTS]; // for search
     double disparities[MAX_DISPARITIES]; // all disparities
 
     double entry = 0;
@@ -33,6 +33,8 @@ int main () {
                 option6(disparities, MAX_DISPARITIES);
             } else if(choice == OPTION_SEARCH){
                 option7(open_prices, MAX_OPEN_PRICES, search_results);
+            } else if(choice == OPTION_UPDATE){
+                option8(MAX_OPEN_PRICES, search_results, disparities, open_prices);
             }
         }
 

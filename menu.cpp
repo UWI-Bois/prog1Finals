@@ -102,8 +102,13 @@ int option6(double arr[], int size){
     pressEnterToContinue();
 }
 
-int option7(double haystack[], int sizeHaystack, double needles[]){
+int option7(double haystack[], int sizeHaystack, int *needles){
     // search array
+    /*
+     * haystack = the data array to query
+     * sizeHaystack = size of dataset
+     * needles = search results
+     */
     cout << "-=-=-=You chose option 7!-=-=-=-" << endl;
     cout << "Search by Open Price, enter -1 to exit search feature :) " << endl;
     double searchVal = 0.0;
@@ -113,7 +118,47 @@ int option7(double haystack[], int sizeHaystack, double needles[]){
         cin >> searchVal;
         searchIndex = getIndexesByValue(searchVal, haystack, sizeHaystack, needles);
         cout << "Entries found = " << searchIndex << endl;
-        printDoubleArray(needles, searchIndex);
+        printIntArray(needles, searchIndex);
+        resetSearches(needles);
+    }
+    cout << SEP;
+    pressEnterToContinue();
+}
+
+int option8(int sizeHaystack, int needles[], double disparities[], double haystack[]) {
+    // update entries in array based on searched value
+    /*
+     * haystack = the dataset array to query
+     * sizeHaystack = size of dataset
+     * needles = search results
+     */
+    cout << "-=-=-=You chose option 8!-=-=-=-" << endl;
+    cout << "UPDATE all entries by Open Price, enter -1 to exit update feature :) " << endl;
+    double searchVal = 0, updateVal = 0;
+    int searchIndex = 0;
+    while(searchVal != -1){
+        cout << "Enter open price to search for (eg: 120) OR -1 to exit: ";
+        cin >> searchVal;
+        if(searchVal == -1){
+            break;
+        }
+        cout << "Enter open price to update (eg: 120): ";
+        cin >> updateVal;
+        searchIndex = getIndexesByValue(searchVal, haystack, sizeHaystack, needles);
+        if(searchIndex > 0){
+            cout << "Entries found = " << searchIndex << endl;
+            printIntArray(needles, searchIndex);
+            cout << "results found, updating values..." << endl;
+            for (int i = 0; i < searchIndex; ++i) { // update entries
+                int needleVal = needles[i];
+                haystack[needleVal] = updateVal;
+                cout << "updating haystack[" << needleVal << "] -> " << updateVal << endl;
+            }
+            populateDisparities(haystack, disparities);
+            resetSearches(needles);
+        } else{
+            cout << "no entries found :(" << endl;
+        }
     }
     cout << SEP;
     pressEnterToContinue();

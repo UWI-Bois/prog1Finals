@@ -29,6 +29,7 @@ int option3(double arr[]);
 int option4(double arr[], int size);
 int option5(double arr[], int size);
 int option6(double arr[], int size);
-int option7(double haystack[], int sizeHaystack, double needles[]);
+int option7(double haystack[], int sizeHaystack, int *needles);
+int option8(int sizeHaystack, int needles[], double disparities[], double haystack[]);
 
 #endif //COMP1601_FINALS_MENU_H

@@ -146,7 +146,7 @@ int populateDisparities(double opens[], double arr[]){
     return idx;
 }
 
-int getIndexesByValue(double needle, double haystack[], int sizeHaystack, double *needles){
+int getIndexesByValue(double needle, double *haystack, int sizeHaystack, int *needles){
     /*
      * if 0 is returned, then no results were found :)
      */
@@ -174,4 +174,10 @@ int addEntry(double val, double arr[]){
 
 void pressEnterToContinue(){
     cout << "Press ENTER to continue... " << flush;
+}
+
+void resetSearches(int *searches){
+    for (int i = 0; i < MAX_SEARCH_RESULTS; ++i) {
+        searches[i] = 0;
+    }
 }
